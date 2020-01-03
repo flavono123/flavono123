@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <Hello msg="Welcome to Your Vue.js + TypeScript App" />
+  <div id="app" :style="{ background: gradient}">
+    <Hello/>
   </div>
 </template>
 
@@ -13,17 +13,25 @@ import Hello from "./components/Hello.vue";
     Hello
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  get gradient() {
+    return `linear-gradient(${Math.random()*360<<0}deg, ${this.generateRandomColor()}, ${this.generateRandomColor()})`
+  }
+
+  generateRandomColor() {
+    return '#'+(Math.random()*0xFFFFFF<<0).toString(16).padStart(6, '0');
+  };
+}
 </script>
 
 <style>
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 100%;
+  font-size: 100%;
 }
 </style>

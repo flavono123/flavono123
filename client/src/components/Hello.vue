@@ -7,8 +7,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { UiButton } from 'keen-ui';
-import 'keen-ui/dist/keen-ui.css';
+import { UiButton } from "keen-ui";
+import "keen-ui/dist/keen-ui.css";
 
 @Component({
   components: {
@@ -18,8 +18,14 @@ import 'keen-ui/dist/keen-ui.css';
 export default class Hello extends Vue {
   data() {
     return {
-      wavingHand: '👋'
-    }
+      wavingHand: "👋",
+    };
   }
 }
 </script>
+
+<style scoped>
+  p {
+    color: white;
+  }
+</style>

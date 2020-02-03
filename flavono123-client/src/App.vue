@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <movie-form />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import MovieForm from "./components/MovieForm.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    MovieForm
   }
 };
 </script>

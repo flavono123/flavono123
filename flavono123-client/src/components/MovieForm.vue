@@ -27,4 +27,20 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped />
+<style scoped>
+input {
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #9E9EAO;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  margin-bottom: 5px;
+}
+</style>

@@ -20,7 +20,9 @@ export default {
   },
   computed: {
     matchedMovies() {
-      return this.movies.filter(movie => movie.title.includes(this.keyword));
+      return this.keyword === ""
+        ? []
+        : this.movies.filter(movie => movie.title.includes(this.keyword));
     }
   }
 };

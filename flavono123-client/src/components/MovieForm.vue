@@ -33,7 +33,7 @@ export default {
 input {
   outline: 0;
   border-width: 0 0 2px;
-  border-color: #9E9EAO;
+  border-color: #5ce0d8;
   display: block;
   width: 100%;
   text-align: center;

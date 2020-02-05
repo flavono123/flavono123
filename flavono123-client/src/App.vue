@@ -16,12 +16,19 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+@font-face {
+  font-family: a시네마L;
+  src: url(../public/a시네마L.ttf) format("truetype");
+}
+
+#app,
+input {
+  font-family: a시네마L;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #5ce0d8;
   margin-top: 60px;
 }
 </style>

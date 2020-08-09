@@ -1,0 +1,55 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+bug:
+  id: 1
+  name: :bug
+dark:
+  id: 2
+  name: :dark
+dragon:
+  id: 3
+  name: :dragon
+electric:
+  id: 4
+  name: :electric
+fairy:
+  id: 5
+  name: :fairy
+fighting:
+  id: 6
+  name: :fighting
+fire:
+  id: 7
+  name: :fire
+flying:
+  id: 8
+  name: :flying
+ghost:
+  id: 9
+  name: :ghost
+grass:
+  id: 10
+  name: :grass
+ground:
+  id: 11
+  name: :ground
+ice:
+  id: 12
+  name: :ice
+normal:
+  id: 13
+  name: :normal
+poison:
+  id: 14
+  name: :poison
+psychic:
+  id: 15
+  name: :psychic
+rock:
+  id: 16
+  name: :rock
+steel:
+  id: 17
+  name: :steel
+water:
+  id: 18
+  name: :water

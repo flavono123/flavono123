@@ -1,0 +1,1 @@
+class IneffectiveType < ApplicationRecord; end

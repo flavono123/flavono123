@@ -1,0 +1,1 @@
+class EffectiveType < ApplicationRecord; end

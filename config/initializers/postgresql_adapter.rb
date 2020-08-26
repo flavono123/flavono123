@@ -1,15 +1,18 @@
 module ActiveRecord
   module ConnectionAdapters
-    class PostgreSQLAdapter < AbstractAdapter
+    module QueryPrintable
       def execute(sql, name=nil)
         failed = false
         super(sql, name)
       rescue => e
         failed = true
-        puts "\e[31m#{sql}\e[0m"
       ensure
-        puts "\e[32m#{sql}\e[0m" unless failed
+        color = failed ? 31 : 32
+        puts "\e[#{color}m#{sql}\e[0m"
       end
     end
+
+    class PostgreSQLAdapter < AbstractAdapter; end
+    PostgreSQLAdapter.prepend(QueryPrintable) if Rails.env.development?
   end
 end

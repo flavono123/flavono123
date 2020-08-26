@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_09_045919) do
+ActiveRecord::Schema.define(version: 2020_08_10_114341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,23 @@ ActiveRecord::Schema.define(version: 2020_08_09_045919) do
     t.index ["type_id", "not_very_effective_type_id"], name: "index_uniqueness_on_not_very_effective_types", unique: true
   end
 
+  create_table "sentences", force: :cascade do |t|
+    t.string "text", null: false
+    t.bigint "title_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["title_id"], name: "index_sentences_on_title_id"
+  end
+
+  create_table "titles", force: :cascade do |t|
+    t.string "text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "types", force: :cascade do |t|
     t.string "name", null: false
   end
 
+  add_foreign_key "sentences", "titles"
 end

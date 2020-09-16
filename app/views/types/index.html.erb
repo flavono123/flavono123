@@ -1,0 +1,6 @@
+<ul>
+  <% @types.each do |type| %>
+  <% next unless type.icon.attached? %>
+  <%= image_tag type.icon.variant(resize: '62x62') %>
+  <% end %>
+</ul>

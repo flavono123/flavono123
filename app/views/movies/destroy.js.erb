@@ -1,1 +1,3 @@
-window.location.reload();
+$('#day-modal .modal-body').load('/movies/<%= @date %>', () => {
+  $('#day-modal').modal('show');
+});

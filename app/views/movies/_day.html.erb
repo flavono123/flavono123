@@ -1,12 +1,12 @@
 <div class="day-card-body card-body">
   <ul class="list-group">
-    <button type="button" id="btn-<%= date %>" class="btn btn-primary" data-toggle="modal" data-target="#day-modal">
+    <button type="button" id="btn-<%= date %>" class="btn btn-primary" data-toggle="modal" data-target="#day-modal"  data-url="/movies/<%= date %>">
       <%= movies.size %>
     </button>
   </ul>
 </div>
 
-<div class="modal fade" id="day-modal" tabindex="-1" role="dialog" aria-labelledby="day-modal-label" aria-hidden="true" data-date="<%= date %>">
+<div class="modal fade" id="day-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -16,16 +16,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <ul class="list-group">
-        <% movies.each do |movie| %>
-          <li class="list-group-item list-group-item-primary movie-list">
-            <%= movie.title %>
-            <%= link_to movie, method: :delete, remote: true do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-          </li>
-        <% end %>
-        </ul>
+        ..loading
       </div>
       <div class="modal-footer">
         <%= form_with url: movies_path, model: Movie.new do |f|%>

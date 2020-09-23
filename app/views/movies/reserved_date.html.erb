@@ -1,0 +1,11 @@
+
+<ul class="list-group">
+<% @movies.each do |movie| %>
+  <li class="list-group-item list-group-item-primary movie-list">
+    <%= movie.title %>
+    <%= link_to movie, method: :delete, remote: true do %>
+      <i class="far fa-trash-alt"></i>
+    <% end %>
+  </li>
+<% end %>
+</ul>

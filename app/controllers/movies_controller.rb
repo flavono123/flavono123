@@ -3,10 +3,27 @@ class MoviesController < ApplicationController
   end
 
   def create
+    movie_params = params.require(:movie).permit(:title, :reserved_date)
+    @date = movie_params[:reserved_date]
+
     Movie.create(params.require(:movie).permit(:title, :reserved_date))
+
+    @movies = Movie.where(reserved_date: @date)
   end
 
   def destroy
-    Movie.find(params[:id]).destroy
+    movie = Movie.find(params[:id])
+    @date = movie.reserved_date
+    
+    movie.destroy
+
+    @movies = Movie.where(reserved_date: @date)
+  end
+
+  def reserved_date
+    @date = params[:date].to_date
+    @movies = Movie.where(reserved_date: @date)
+
+    render layout: false
   end
 end

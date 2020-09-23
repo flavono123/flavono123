@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="title text-right">
+    <%= "#{year} #{month}월" %>
+  </div>
+  <div class="row text-center">
+  <% weekdays.each do |weekday| %>
+    <div class="col">
+      <%= weekday %>
+    </div>
+  <% end %>
+  </div>
+  <% month_matrix.each do |week| %>
+    <div class="row weekday-row text-center">
+    <% week.each do |date| %>
+      <div class="col day-card card">
+        <div class="card-title">
+          <%= date&.day %>
+        </div>
+        <% movies = movies_of(date) %>
+        <% if movies.exists? %>
+          <%= render partial: 'day', locals: {movies: movies, date: date} %>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  <% end %>
+</div>

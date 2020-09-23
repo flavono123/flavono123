@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_120629) do
+ActiveRecord::Schema.define(version: 2020_09_17_050606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(version: 2020_08_27_120629) do
     t.integer "type_id", null: false
     t.integer "ineffective_type_id", null: false
     t.index ["type_id", "ineffective_type_id"], name: "index_uniqueness_on_ineffective_types", unique: true
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "reserved_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "not_very_effective_types", id: false, force: :cascade do |t|

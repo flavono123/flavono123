@@ -8,8 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+// for views
 require("packs/movies/day")
 
+// libararies
 import "bootstrap"
 import "src/stylesheets/application"
 import "@fortawesome/fontawesome-free/js/all";

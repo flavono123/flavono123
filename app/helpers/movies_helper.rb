@@ -24,8 +24,8 @@ module MoviesHelper
     today.year
   end
 
-  def movies_of(date)
-    Movie.where(reserved_date: date)
+  def movies_count(date)
+    Movie.where(reserved_date: date).size
   end
 
   private

@@ -18,7 +18,9 @@ import "@fortawesome/fontawesome-free/js/all";
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
-  $('[data-toggle="popover"]').popover()
+  $('[data-toggle="popover"]').popover({
+    sanitize: false
+  })
 })
 
 window.jQuery = $;

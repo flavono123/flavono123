@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid h-100">
   <div class="title text-right">
     <%= "#{year} #{month}월" %>
   </div>
@@ -26,6 +26,10 @@
             </ul>
           </div>
           <%= render partial: 'day', locals: {date: date} %>
+        <% else %>
+          <% if date %>
+          <a tabindex="0" data-trigger="hover" class="stretched-link" data-toggle="popover" data-trigger="click" title="<%= date.day %>일에 볼 영화" data-html="true" data-container="body" data-content='<%= render partial: 'new', locals: {date: date} %>'></a>
+          <% end %>
         <% end %>
       </div>
     <% end %>

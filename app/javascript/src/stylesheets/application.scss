@@ -4,3 +4,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 
 @import "movies";
 @import "movies/day";
+
+@media (min-width: 500px) {
+  .container-fluid {
+    margin-top: 200px;
+  }
+}

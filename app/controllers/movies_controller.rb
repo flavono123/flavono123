@@ -9,6 +9,8 @@ class MoviesController < ApplicationController
     Movie.create(params.require(:movie).permit(:title, :reserved_date))
 
     @movies = Movie.where(reserved_date: @date)
+
+    render 'reload' if @movies.count == 1
   end
 
   def destroy
@@ -18,6 +20,8 @@ class MoviesController < ApplicationController
     movie.destroy
 
     @movies = Movie.where(reserved_date: @date)
+
+    render 'reload' if @movies.count == 0
   end
 
   def reserved_date

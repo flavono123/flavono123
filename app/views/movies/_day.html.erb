@@ -3,7 +3,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="day-modal-label"><%= "#{date.day}일의 영화" %></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -11,17 +11,7 @@
         ..loading
       </div>
       <div class="modal-footer">
-        <%= form_with url: movies_path, model: Movie.new do |f|%>
-          <div class="input-group mb-3">
-            <%= f.text_field(:title, class: "form-control", placeholder: "제목") %>
-            <%= f.hidden_field(:reserved_date, value: date) %>
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="submit">
-                <i class="fas fa-plus"></i>
-              </button>
-            </div>
-          </div>
-        <% end %>
+        <%= render partial: 'new', locals: {date: date} %>
       </div>
     </div>
   </div>

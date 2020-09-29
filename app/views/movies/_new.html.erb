@@ -1,0 +1,11 @@
+<%= form_with url: movies_path, model: Movie.new do |f|%>
+  <div class="input-group mb-3 movie-form">
+    <%= f.text_field(:title, class: "form-control title-input", placeholder: "제목") %>
+    <%= f.hidden_field(:reserved_date, value: date) %>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="submit">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+  </div>
+<% end %>
